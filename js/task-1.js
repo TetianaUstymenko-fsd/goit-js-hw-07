@@ -1,17 +1,11 @@
-// Завдання 1
+const list = document.querySelector('#categories');
+console.log(`Number of categories: ${list.children.length}`);
 
-document.addEventListener("DOMContentLoaded", () => {
-    const categories = document.querySelectorAll("#categories .item");
-    console.log(`Number of categories: ${categories.length}`);
-  
-    categories.forEach((category) => {
-      const title = category.querySelector("h2").textContent;
-      const elementsCount = category.querySelectorAll("ul li").length;
-  
-      console.log(`Category: ${title}`);
-      console.log(`Elements: ${elementsCount}`);
-    });
-  });
+const item = document.querySelectorAll('.item');
+item.forEach(element => {
+    console.log(`Category: ${element.firstElementChild.textContent}`);
+    console.log(`Elements: ${element.lastElementChild.children.length}`);
+})
   
 
 

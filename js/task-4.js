@@ -1,24 +1,24 @@
  // Завдання 4
- const form = document.querySelector(".login-form");
- form.addEventListener("submit", (event) => {
-   event.preventDefault();
-   const {
-     elements: { email, password },
-   } = event.currentTarget;
+ const formLogin = document.querySelector('.login-form');
+
+ const sendUserInfo = (event) => {
+     event.preventDefault();
+     const form = event.target;
+     const login = form.elements.email.value;
+     const password = form.elements.password.value;
  
-   const emailValue = email.value.trim();
-   const passwordValue = password.value.trim();
+     if (!login || !password) {
+         alert('All form fields must be filled in');
+         return;
+     }
  
-   if (emailValue === "" || passwordValue === "") {
-     return alert("All form fields must be filled in");
-   }
+     const userInfo = {};
+     userInfo[form.elements.email.name] = login.trim();
+     userInfo[form.elements.password.name] = password.trim();
  
-   const formData = {
-     email: emailValue,
-     password: passwordValue,
-   };
+     console.log(userInfo);
  
-   console.log(formData);
-   form.reset();
- });
+     formLogin.reset();
+ }
  
+ formLogin.addEventListener('submit', sendUserInfo);

@@ -1,10 +1,13 @@
  // Завдання 3
- const input = document.getElementById("name-input");
- const output = document.getElementById("name-output");
-
- input.addEventListener("input", () => {
-   const trimmedValue = input.value.trim();
-
-   output.textContent = trimmedValue === "" ? "Anonymous" : trimmedValue;
- });
+ const input = document.querySelector('#name-input');
+ const nameUser = document.querySelector('#name-output');
  
+ const helloName = (event) => {
+     nameUser.textContent = event.currentTarget.value.trim();
+ 
+     if (!nameUser.textContent) {
+         nameUser.textContent = 'Anonymous';
+     }
+ }
+ 
+ input.addEventListener('input', helloName);
