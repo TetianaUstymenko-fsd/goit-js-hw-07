@@ -49,11 +49,13 @@ const images = [
   gallery.insertAdjacentHTML("beforeend", galleryItems);
   
   // Завдання 3
-  const input = document.querySelector("#name-input");
-  const output = document.querySelector("#name-output");
+  const input = document.getElementById("name-input");
+  const output = document.getElementById("name-output");
+
   input.addEventListener("input", () => {
-    const name = input.value.trim();
-    output.textContent = name === "" ? "Anonymous" : name;
+    const trimmedValue = input.value.trim();
+
+    output.textContent = trimmedValue === "" ? "Anonymous" : trimmedValue;
   });
   
   // Завдання 4
@@ -86,39 +88,12 @@ const images = [
       .toString(16)
       .padStart(6, 0)}`;
   }
-  const changeColorBtn = document.querySelector(".change-color");
-  const colorValue = document.querySelector(".color");
-  changeColorBtn.addEventListener("click", () => {
+
+  const button = document.querySelector(".change-color");
+  const colorSpan = document.querySelector(".color");
+
+  button.addEventListener("click", () => {
     const randomColor = getRandomHexColor();
     document.body.style.backgroundColor = randomColor;
-    colorValue.textContent = randomColor;
+    colorSpan.textContent = randomColor;
   });
-
-  // Ім'я користувача
-const nameInput = document.getElementById('nameInput');
-const userName = document.getElementById('userName');
-
-nameInput.addEventListener('input', () => {
-  userName.textContent = nameInput.value || 'Anonymous!';
-});
-
-// Зміна кольору фону
-function changeColor() {
-  document.body.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-}
-
-// Створення/видалення боксів
-function createBoxes() {
-  const count = parseInt(document.getElementById('boxCount').value);
-  const boxContainer = document.getElementById('boxes');
-  boxContainer.innerHTML = '';
-  for (let i = 0; i < count; i++) {
-    const box = document.createElement('div');
-    box.classList.add('box');
-    boxContainer.appendChild(box);
-  }
-}
-
-function destroyBoxes() {
-  document.getElementById('boxes').innerHTML = '';
-}

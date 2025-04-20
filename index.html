@@ -9,35 +9,36 @@
 <body>
 
     <!-- Завдання 1 -->
-    <ul id="categories">
-        <li class="item">
-          <h2>Animals</h2>
-          <ul>
-            <li>Cat</li>
-            <li>Hamster</li>
-            <li>Horse</li>
-            <li>Parrot</li>
-          </ul>
-        </li>
-        <li class="item">
-          <h2>Products</h2>
-          <ul>
-            <li>Bread</li>
-            <li>Parsley</li>
-            <li>Cheese</li>
-          </ul>
-        </li>
-        <li class="item">
-          <h2>Technologies</h2>
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Node.js</li>
-          </ul>
-        </li>
-      </ul>
+    <div class="list-section">
+        
+         
+        <div class="category">
+          <h3>Animals</h3>
+          <input type="text" placeholder="Cat" />
+          <input type="text" placeholder="Hamster" />
+          <input type="text" placeholder="Horse" />
+          <input type="text" placeholder="Parrot" />
+        </div>
+   
+
+   
+        <div class="category">
+          <h3>Products</h3>
+          <input type="text" placeholder="Bread" />
+          <input type="text" placeholder="Parsley" />
+          <input type="text" placeholder="Cheese" />
+        </div>
+   
+
+        <div class="category">
+          <h3>Technologies</h3>
+          <input type="text" placeholder="HTML" />
+          <input type="text" placeholder="CSS" />
+          <input type="text" placeholder="JavaScript" />
+          <input type="text" placeholder="React" />
+          <input type="text" placeholder="Node.js" />
+        </div>
+      </div>
       
 
 
@@ -47,30 +48,36 @@
 
       <!-- Завдання 3 -->
 
+<div class="centered">
       <input type="teat" id="name-input" placeholder="Please enter your name" />
-      <h1>Hello, <span id="name-output">Anonymous</span>!</h1>
+      <p id="greeting">Hello, Anonymous!</p>
+    </div>
+    
 
      <!-- Завдання 4 -->
 
-     <form class="login-form">
-        <label>
-            Email
-            <input type="email" name="email" />
-        </label>
-        <label>
-            Password
-            <input type="password" name="password" />
-        </label>
-        <button type="submit">Log in</button>
-     </form>
+     
+     <div class="form-container">
+        <form class="login-form">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+    
+          <label for="password">Password</label>
+<div class="password-container">
+  <input type="password" id="password" name="password" required />
+  <span id="togglePassword" class="toggle-password">👁️</span>
+</div>
+          <button type="submit">Log in</button>
+        </form>
+      </div>
 
       <!-- Завдання 5 -->
 
       <div class="widget">
         <p>Background color: <span class="color">-</span></p>
-        <button type="button" class="change-color">-</button>
+        <button type="button" class="change-color">Change color</button>
       </div>
-
+      
 
       <script src="js/tasks.js" defer></script>
 
